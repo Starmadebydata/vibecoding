@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { MessageCircle, Share2, Users, Github, Twitter, Bot, BookOpen, Globe } from 'lucide-react';
 
 const Community: React.FC = () => {

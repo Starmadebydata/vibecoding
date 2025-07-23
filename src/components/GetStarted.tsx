@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import { Bot, Sparkles, Code, ArrowRight, X } from 'lucide-react';

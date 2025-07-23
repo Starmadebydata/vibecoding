@@ -1,10 +1,12 @@
+'use client';
+
 import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useSafeTheme } from '@/hooks/useSafeTheme';
 import { ArrowLeft, Book, Code, Terminal, Play, Clock, User, Tag, Eye, ThumbsUp, BookOpen, Bookmark, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const TutorialsPage: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme } = useSafeTheme();
   
   const tutorials = [
     {
@@ -103,7 +105,7 @@ const TutorialsPage: React.FC = () => {
     <div className={`min-h-screen w-full ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex items-center mb-8">
-          <Link to="/" className={`flex items-center text-sm font-medium ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
+          <Link href="/" className={`flex items-center text-sm font-medium ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
             <ArrowLeft className="w-4 h-4 mr-1" />
             返回首页
           </Link>
@@ -182,7 +184,7 @@ const TutorialsPage: React.FC = () => {
                   </ul>
                 </div>
                 <Link 
-                  to={`/tutorials/${featuredTutorial.id}`}
+                  href={`/tutorials/${featuredTutorial.id}`}
                   className="mt-6 w-full px-4 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium text-center transition-all duration-200"
                 >
                   开始学习
@@ -332,7 +334,7 @@ const TutorialsPage: React.FC = () => {
                       </span>
                     </div>
                     <h3 className="text-lg font-bold mb-2 line-clamp-2">
-                      <Link to={`/tutorials/${tutorial.id}`} className="hover:text-purple-500 transition-colors duration-200">
+                      <Link href={`/tutorials/${tutorial.id}`} className="hover:text-purple-500 transition-colors duration-200">
                         {tutorial.title}
                       </Link>
                     </h3>
@@ -418,7 +420,7 @@ const TutorialsPage: React.FC = () => {
                 我们欢迎社区成员分享自己的 AI 编程经验和知识。如果你有兴趣贡献教程，请查看我们的投稿指南。
               </p>
               <Link 
-                to="/contribute"
+                href="/contribute"
                 className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white transition-all duration-200"
               >
                 查看投稿指南

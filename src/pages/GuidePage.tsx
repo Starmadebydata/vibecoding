@@ -1,16 +1,18 @@
+'use client';
+
 import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import Link from 'next/link';
+import { useSafeTheme } from '@/hooks/useSafeTheme';
 import { Bot, Book, Code, Sparkles, Terminal, Brain, MessageSquare, Zap, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const GuidePage: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme } = useSafeTheme();
   
   return (
     <div className={`min-h-screen w-full ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex items-center mb-8">
-          <Link to="/" className={`flex items-center text-sm font-medium ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
+          <Link href="/" className={`flex items-center text-sm font-medium ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
             <ArrowLeft className="w-4 h-4 mr-1" />
             返回首页
           </Link>

@@ -1,0 +1,74 @@
+{
+  "common": {
+    "navigation": {
+      "home": "首页",
+      "guides": "指南",
+      "tools": "工具",
+      "tutorials": "教程",
+      "bestPractices": "最佳实践",
+      "profile": "个人资料",
+      "submitProject": "提交项目"
+    },
+    "buttons": {
+      "learnMore": "了解更多",
+      "getStarted": "开始使用",
+      "submit": "提交",
+      "backToHome": "返回首页",
+      "startLearning": "开始学习",
+      "subscribe": "订阅",
+      "login": "登录",
+      "logout": "退出登录"
+    },
+    "language": {
+      "switchTo": "切换语言",
+      "chinese": "中文",
+      "english": "English"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Vibe Coding - 提升你的编程体验",
+      "description": "探索 AI 驱动的编程方法，发现效率提升的最佳实践",
+      "hero": {
+        "headline": "Vibe Coding",
+        "subheadline": "知识库",
+        "typedText": "探索 • 学习 • 分享",
+        "description": "探索 AI 驱动的编程方法，发现效率提升的最佳实践"
+      },
+      "categories": {
+        "guides": {
+          "title": "入门指南",
+          "description": "从这里开始了解 AI 编程"
+        },
+        "tools": {
+          "title": "工具文档",
+          "description": "详细的工具使用说明"
+        },
+        "bestPractices": {
+          "title": "最佳实践",
+          "description": "AI 编程的推荐方法"
+        },
+        "tutorials": {
+          "title": "教程",
+          "description": "实用的学习资源"
+        }
+      }
+    },
+    "guides": {
+      "title": "Vibe Coding 入门指南",
+      "description": "探索 AI 驱动的编程方法，让开发更高效、更有创意"
+    },
+    "tools": {
+      "title": "AI 编程工具文档",
+      "description": "探索各种 AI 编程工具，找到最适合你的开发助手"
+    },
+    "tutorials": {
+      "title": "AI 编程教程",
+      "description": "从入门到精通，全面的 AI 编程学习资源"
+    },
+    "bestPractices": {
+      "title": "AI 编程最佳实践",
+      "description": "提高 AI 辅助编程效率和质量的关键策略和方法"
+    }
+  }
+}

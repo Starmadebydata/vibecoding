@@ -1,10 +1,12 @@
+'use client';
+
 import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useSafeTheme } from '@/hooks/useSafeTheme';
 import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Code, Terminal, Brain, MessageSquare, Zap, FileCode, Workflow } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const BestPracticesPage: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme } = useSafeTheme();
   
   const practices = [
     {
@@ -155,7 +157,7 @@ const BestPracticesPage: React.FC = () => {
     <div className={`min-h-screen w-full ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex items-center mb-8">
-          <Link to="/" className={`flex items-center text-sm font-medium ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
+          <Link href="/" className={`flex items-center text-sm font-medium ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
             <ArrowLeft className="w-4 h-4 mr-1" />
             返回首页
           </Link>
@@ -344,13 +346,13 @@ const BestPracticesPage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link 
-              to="/tools"
+              href="/tools"
               className="px-8 py-3 rounded-lg font-medium bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg transform transition-all duration-200 hover:scale-105 text-center"
             >
               探索 AI 工具
             </Link>
             <Link 
-              to="/tutorials"
+              href="/tutorials"
               className={`px-8 py-3 rounded-lg font-medium ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'} shadow-lg transform transition-all duration-200 hover:scale-105 text-center`}
             >
               查看教程

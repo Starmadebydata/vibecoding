@@ -1,10 +1,12 @@
+'use client';
+
 import React, { useState } from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { Bot, Code, Sparkles, Terminal, Braces, Laptop, Workflow, Plug as Plugin } from 'lucide-react';
 
 const ToolsShowcase: React.FC = () => {
   const { theme } = useTheme();
-  const [selectedCategory, setSelectedCategory] = useState('editors');
+  const [selectedCategory, setSelectedCategory] = useState<keyof typeof tools>('editors');
   
   const tools = {
     editors: [

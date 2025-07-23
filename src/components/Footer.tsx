@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { Bot, Github, Twitter, Globe, MessageCircle, Mail, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {

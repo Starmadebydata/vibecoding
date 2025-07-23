@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
-import { useTheme } from '../../contexts/ThemeContext';
-import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from '@/contexts/ThemeContext';
+import { useAuth } from '@/contexts/AuthContext';
 import { X, Mail, Lock, Loader } from 'lucide-react';
 
 interface AuthModalProps {

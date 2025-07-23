@@ -1,7 +1,9 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import Link from 'next/link';
+import { useTheme } from '@/contexts/ThemeContext';
 import { Bot, Book, Code, Users, Sparkles, BookOpen, Compass, Library } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   const { theme } = useTheme();
@@ -76,7 +78,7 @@ const Hero: React.FC = () => {
           {categories.map((category, index) => (
             <Link
               key={index}
-              to={category.link}
+              href={category.link}
               className={`p-6 rounded-xl transition-all duration-300 transform hover:scale-105 ${
                 theme === 'dark' 
                   ? 'bg-gray-800/50 hover:bg-gray-800 border border-gray-700' 

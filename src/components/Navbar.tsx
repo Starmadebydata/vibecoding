@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { Menu, X, Sun, Moon, Code, Bot, Users, Sparkles } from 'lucide-react';
 import Search from './Search';
 import UserMenu from './auth/UserMenu';

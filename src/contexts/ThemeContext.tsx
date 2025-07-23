@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type ThemeMode = 'dark' | 'light';
@@ -18,16 +20,19 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<ThemeMode>(() => {
-    // Check for saved theme preference or use system preference
+  const [theme, setTheme] = useState<ThemeMode>('light');
+
+  // Initialize theme from localStorage on client side
+  useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as ThemeMode;
     if (savedTheme) {
-      return savedTheme;
+      setTheme(savedTheme);
+    } else {
+      // Use system preference if no saved theme
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
     }
-    
-    // Default to dark mode as it's better for coding
-    return 'dark';
-  });
+  }, []);
 
   useEffect(() => {
     // Update localStorage when theme changes

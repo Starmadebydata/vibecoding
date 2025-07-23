@@ -1,0 +1,74 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Home",
+      "guides": "Guides",
+      "tools": "Tools",
+      "tutorials": "Tutorials",
+      "bestPractices": "Best Practices",
+      "profile": "Profile",
+      "submitProject": "Submit Project"
+    },
+    "buttons": {
+      "learnMore": "Learn More",
+      "getStarted": "Get Started",
+      "submit": "Submit",
+      "backToHome": "Back to Home",
+      "startLearning": "Start Learning",
+      "subscribe": "Subscribe",
+      "login": "Login",
+      "logout": "Logout"
+    },
+    "language": {
+      "switchTo": "Switch Language",
+      "chinese": "中文",
+      "english": "English"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Vibe Coding - Enhance Your Programming Experience",
+      "description": "Explore AI-driven programming methods and discover best practices for efficiency improvement",
+      "hero": {
+        "headline": "Vibe Coding",
+        "subheadline": "Knowledge Base",
+        "typedText": "Explore • Learn • Share",
+        "description": "Explore AI-driven programming methods and discover best practices for efficiency improvement"
+      },
+      "categories": {
+        "guides": {
+          "title": "Getting Started",
+          "description": "Start here to learn about AI programming"
+        },
+        "tools": {
+          "title": "Tool Documentation",
+          "description": "Detailed tool usage instructions"
+        },
+        "bestPractices": {
+          "title": "Best Practices",
+          "description": "Recommended AI programming methods"
+        },
+        "tutorials": {
+          "title": "Tutorials",
+          "description": "Practical learning resources"
+        }
+      }
+    },
+    "guides": {
+      "title": "Vibe Coding Getting Started Guide",
+      "description": "Explore AI-driven programming methods to make development more efficient and creative"
+    },
+    "tools": {
+      "title": "AI Programming Tools Documentation",
+      "description": "Explore various AI programming tools and find the development assistant that suits you best"
+    },
+    "tutorials": {
+      "title": "AI Programming Tutorials",
+      "description": "Comprehensive AI programming learning resources from beginner to advanced"
+    },
+    "bestPractices": {
+      "title": "AI Programming Best Practices",
+      "description": "Key strategies and methods to improve AI-assisted programming efficiency and quality"
+    }
+  }
+}

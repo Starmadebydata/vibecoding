@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { Calendar, User, Tag, ArrowRight, Book, Code, Sparkles, BookOpen, Brain, Terminal } from 'lucide-react';
 
 const Blog: React.FC = () => {

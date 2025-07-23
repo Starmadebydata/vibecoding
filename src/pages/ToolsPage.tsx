@@ -1,10 +1,12 @@
+'use client';
+
 import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useSafeTheme } from '@/hooks/useSafeTheme';
 import { Terminal, Code, Bot, Zap, ArrowLeft, Github, Laptop, Settings, Workflow, Download, ExternalLink, Book } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const ToolsPage: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme } = useSafeTheme();
   
   const tools = [
     {
@@ -74,7 +76,7 @@ const ToolsPage: React.FC = () => {
     <div className={`min-h-screen w-full ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex items-center mb-8">
-          <Link to="/" className={`flex items-center text-sm font-medium ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
+          <Link href="/" className={`flex items-center text-sm font-medium ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-200`}>
             <ArrowLeft className="w-4 h-4 mr-1" />
             返回首页
           </Link>
@@ -322,7 +324,7 @@ const ToolsPage: React.FC = () => {
             如果你对 AI 编程工具有任何疑问，或者需要更详细的信息，请随时联系我们。
           </p>
           <Link 
-            to="/contact"
+            href="/contact"
             className="px-8 py-3 rounded-lg font-medium bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg transform transition-all duration-200 hover:scale-105 inline-block"
           >
             联系我们
