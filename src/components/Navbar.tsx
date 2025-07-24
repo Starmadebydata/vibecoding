@@ -1,13 +1,16 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useSafeTheme } from '@/hooks/useSafeTheme';
+import { useLocalization } from '@/hooks/useLocalization';
 import { Menu, X, Sun, Moon, Code, Bot, Users, Sparkles } from 'lucide-react';
 import Search from './Search';
 import UserMenu from './auth/UserMenu';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useSafeTheme();
+  const { t } = useLocalization('common.navigation');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
@@ -40,15 +43,15 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="hover:text-purple-400 transition-colors duration-200 flex items-center">
               <Sparkles className="w-4 h-4 mr-1" />
-              特性
+              {t('features')}
             </a>
             <a href="#editor" className="hover:text-purple-400 transition-colors duration-200 flex items-center">
               <Code className="w-4 h-4 mr-1" />
-              示例
+              {t('examples')}
             </a>
             <a href="#community" className="hover:text-purple-400 transition-colors duration-200 flex items-center">
               <Users className="w-4 h-4 mr-1" />
-              社区
+              {t('community')}
             </a>
             <Search />
             <button 
