@@ -1,11 +1,13 @@
 'use client';
 
 import React from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useSafeTheme } from '@/hooks/useSafeTheme';
+import { useLocalization } from '@/hooks/useLocalization';
 import { Bot, Book, Code, MessageSquare, Share2, Zap, Brain, LayoutGrid, Terminal, Puzzle, FileCode, Users, Settings, Workflow } from 'lucide-react';
 
 const Features: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme } = useSafeTheme();
+  const { t } = useLocalization('pages.home.features');
   
   const categories = [
     {

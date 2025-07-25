@@ -2,13 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useSafeTheme } from '@/hooks/useSafeTheme';
+import { useLocalization } from '@/hooks/useLocalization';
 import { Bot, Book, Code, Users, Sparkles, BookOpen, Compass, Library } from 'lucide-react';
+import QuickNavigation from './QuickNavigation';
 
 const Hero: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme } = useSafeTheme();
+  const { t } = useLocalization('pages.home.hero');
   const [typedText, setTypedText] = useState('');
-  const fullText = '探索 • 学习 • 分享';
+  const fullText = t('typedText');
   
   useEffect(() => {
     let index = 0;
@@ -24,29 +27,31 @@ const Hero: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const { t: tCategories } = useLocalization('pages.home.categories');
+  
   const categories = [
     {
       icon: <BookOpen className="w-6 h-6" />,
-      title: '入门指南',
-      description: '从这里开始了解 AI 编程',
+      title: tCategories('guides.title'),
+      description: tCategories('guides.description'),
       link: '/guides'
     },
     {
       icon: <Code className="w-6 h-6" />,
-      title: '工具文档',
-      description: '详细的工具使用说明',
+      title: tCategories('tools.title'),
+      description: tCategories('tools.description'),
       link: '/tools'
     },
     {
       icon: <Book className="w-6 h-6" />,
-      title: '最佳实践',
-      description: 'AI 编程的推荐方法',
+      title: tCategories('bestPractices.title'),
+      description: tCategories('bestPractices.description'),
       link: '/best-practices'
     },
     {
       icon: <Compass className="w-6 h-6" />,
-      title: '教程',
-      description: '实用的学习资源',
+      title: tCategories('tutorials.title'),
+      description: tCategories('tutorials.description'),
       link: '/tutorials'
     }
   ];
@@ -56,9 +61,9 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-            <span className="block">Vibe Coding</span>
+            <span className="block">{t('headline')}</span>
             <span className="block mt-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              知识库
+              {t('subheadline')}
             </span>
           </h1>
           
@@ -70,7 +75,7 @@ const Hero: React.FC = () => {
           </div>
           
           <p className={`mt-6 text-lg max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-            探索 AI 驱动的编程方法，发现效率提升的最佳实践
+            {t('description')}
           </p>
         </div>
         
@@ -99,74 +104,7 @@ const Hero: React.FC = () => {
         </div>
         
         <div className="mt-16">
-          <div className={`p-6 rounded-xl ${
-            theme === 'dark' 
-              ? 'bg-gray-800/50 border border-gray-700' 
-              : 'bg-white border border-gray-200 shadow-md'
-          }`}>
-            <h2 className="text-2xl font-bold mb-4">快速导航</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className={`p-4 rounded-lg ${
-                theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-50'
-              }`}>
-                <h3 className="font-bold mb-2 flex items-center">
-                  <Library className="w-5 h-5 mr-2" />
-                  热门主题
-                </h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="/topics/prompt-engineering" className="hover:text-purple-500">提示工程</a>
-                  </li>
-                  <li>
-                    <a href="/topics/code-generation" className="hover:text-purple-500">代码生成</a>
-                  </li>
-                  <li>
-                    <a href="/topics/refactoring" className="hover:text-purple-500">代码重构</a>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className={`p-4 rounded-lg ${
-                theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-50'
-              }`}>
-                <h3 className="font-bold mb-2 flex items-center">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  最新更新
-                </h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="/updates/v2-features" className="hover:text-purple-500">V2 新特性</a>
-                  </li>
-                  <li>
-                    <a href="/updates/tool-comparison" className="hover:text-purple-500">工具对比</a>
-                  </li>
-                  <li>
-                    <a href="/updates/community" className="hover:text-purple-500">社区动态</a>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className={`p-4 rounded-lg ${
-                theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-50'
-              }`}>
-                <h3 className="font-bold mb-2 flex items-center">
-                  <Users className="w-5 h-5 mr-2" />
-                  社区资源
-                </h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="/community/showcase" className="hover:text-purple-500">项目展示</a>
-                  </li>
-                  <li>
-                    <a href="/community/discussions" className="hover:text-purple-500">讨论</a>
-                  </li>
-                  <li>
-                    <a href="/community/contribute" className="hover:text-purple-500">贡献指南</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <QuickNavigation />
         </div>
       </div>
     </section>

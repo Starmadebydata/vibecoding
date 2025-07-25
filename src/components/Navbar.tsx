@@ -54,6 +54,7 @@ const Navbar: React.FC = () => {
               {t('community')}
             </a>
             <Search />
+            <LanguageSwitcher />
             <button 
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-800/20 transition-colors duration-200"
@@ -89,22 +90,25 @@ const Navbar: React.FC = () => {
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/20 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              特性
+              {t('features')}
             </a>
             <a 
               href="#editor" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/20 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              示例
+              {t('examples')}
             </a>
             <a 
               href="#community" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/20 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              社区
+              {t('community')}
             </a>
+            <div className="px-3 py-2">
+              <LanguageSwitcher className="w-full" />
+            </div>
             <button 
               onClick={toggleTheme}
               className="flex items-center w-full px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/20 transition-colors duration-200"
@@ -112,12 +116,12 @@ const Navbar: React.FC = () => {
               {theme === 'dark' ? (
                 <>
                   <Sun className="w-5 h-5 mr-2" />
-                  切换至亮色模式
+                  {t('lightMode')}
                 </>
               ) : (
                 <>
                   <Moon className="w-5 h-5 mr-2" />
-                  切换至暗色模式
+                  {t('darkMode')}
                 </>
               )}
             </button>
