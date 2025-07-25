@@ -26,7 +26,7 @@ export function useLocalization(namespace?: string) {
    */
   const switchLocale = useCallback((newLocale: string) => {
     // 从当前路径中提取非语言部分
-    const pathWithoutLocale = pathname.replace(/^\\/[^\\/]+/, '');
+    const pathWithoutLocale = pathname.replace(/^\/[^\/]+/, '');
     router.push(`/${newLocale}${pathWithoutLocale || ''}`);
   }, [pathname, router]);
   
