@@ -12,51 +12,51 @@ const Features: React.FC = () => {
   const categories = [
     {
       icon: <Bot className="w-6 h-6 text-purple-500" />,
-      title: 'AI 基础知识',
-      description: '了解 AI 编程的核心概念和基本原理。',
-      subcategories: ['模型介绍', '工作原理', '应用场景']
+      title: t('categories.aiBasics.title'),
+      description: t('categories.aiBasics.description'),
+      subcategories: t.raw('categories.aiBasics.subcategories') as string[]
     },
     {
       icon: <Terminal className="w-6 h-6 text-blue-500" />,
-      title: '开发工具',
-      description: '探索各种 AI 编程工具的详细使用指南。',
-      subcategories: ['编辑器', '插件', '命令行工具']
+      title: t('categories.devTools.title'),
+      description: t('categories.devTools.description'),
+      subcategories: t.raw('categories.devTools.subcategories') as string[]
     },
     {
       icon: <Brain className="w-6 h-6 text-green-500" />,
-      title: '提示工程',
-      description: '学习如何编写高效的提示词以提升 AI 输出质量。',
-      subcategories: ['提示模式', '最佳实践', '示例集']
+      title: t('categories.promptEngineering.title'),
+      description: t('categories.promptEngineering.description'),
+      subcategories: t.raw('categories.promptEngineering.subcategories') as string[]
     },
     {
       icon: <Code className="w-6 h-6 text-yellow-500" />,
-      title: '代码生成',
-      description: '掌握使用 AI 生成高质量代码的技巧。',
-      subcategories: ['代码补全', '重构建议', '注释生成']
+      title: t('categories.codeGeneration.title'),
+      description: t('categories.codeGeneration.description'),
+      subcategories: t.raw('categories.codeGeneration.subcategories') as string[]
     },
     {
       icon: <Puzzle className="w-6 h-6 text-red-500" />,
-      title: '集成指南',
-      description: '了解如何将 AI 工具集成到开发流程中。',
-      subcategories: ['工作流配置', 'CI/CD', '团队协作']
+      title: t('categories.integration.title'),
+      description: t('categories.integration.description'),
+      subcategories: t.raw('categories.integration.subcategories') as string[]
     },
     {
       icon: <FileCode className="w-6 h-6 text-indigo-500" />,
-      title: '项目模板',
-      description: '快速开始的项目模板和最佳实践指南。',
-      subcategories: ['架构示例', '配置模板', '代码规范']
+      title: t('categories.projectTemplates.title'),
+      description: t('categories.projectTemplates.description'),
+      subcategories: t.raw('categories.projectTemplates.subcategories') as string[]
     },
     {
       icon: <Settings className="w-6 h-6 text-amber-500" />,
-      title: '工具配置',
-      description: '详细的工具配置和自定义设置指南。',
-      subcategories: ['环境配置', '个性化设置', '性能优化']
+      title: t('categories.toolConfig.title'),
+      description: t('categories.toolConfig.description'),
+      subcategories: t.raw('categories.toolConfig.subcategories') as string[]
     },
     {
       icon: <Workflow className="w-6 h-6 text-teal-500" />,
-      title: '工作流程',
-      description: '优化的 AI 辅助开发工作流程指南。',
-      subcategories: ['开发流程', '协作模式', '效率技巧']
+      title: t('categories.workflow.title'),
+      description: t('categories.workflow.description'),
+      subcategories: t.raw('categories.workflow.subcategories') as string[]
     }
   ];
   
@@ -66,11 +66,11 @@ const Features: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold">
             <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              知识体系
+              {t('title')}
             </span>
           </h2>
           <p className={`mt-4 max-w-2xl mx-auto text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-            系统化的 AI 编程知识分类，助您快速找到所需资源
+            {t('subtitle')}
           </p>
         </div>
         
