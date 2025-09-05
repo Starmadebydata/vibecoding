@@ -1,9 +1,5 @@
-import {redirect} from 'next/navigation';
-
 export default function RootLayout() {
-  // 重定向到默认语言路由
-  redirect('/zh');
-  
-  // 这个返回永远不会被执行，但需要满足 TypeScript 类型检查
+  // 根布局不再做任何重定向，避免与中间件/页面级重定向造成循环
+  // 该文件仅为满足 Next.js 对 app 根布局的要求
   return null;
 }
