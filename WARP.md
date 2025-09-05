@@ -14,6 +14,9 @@ Common commands
 - Start (production): npm run start
 - Lint: npm run lint
 - Type-check: npm run type-check
+- Test: npm run test
+- Test (watch): npm run test:watch
+- Run single test: npm run test -- tests/contexts/theme.test.tsx
 
 Environment
 - Create .env.local with at least:
@@ -48,13 +51,16 @@ Architecture (big picture)
   - tsconfig paths: @/* → src/*, plus @/components, @/lib, @/contexts
 
 Testing
-- No test framework configured (no jest/vitest/playwright deps; no test scripts). Add one before relying on test commands.
+- Vitest configured (jsdom). Setup file: test/setup.ts adds @testing-library/jest-dom.
+- Run tests: npm run test
+- Watch mode: npm run test:watch
+- Run a single file: npm run test -- tests/contexts/theme.test.tsx
 
 Deployment notes
 - Next.js defaults apply (Vercel-ready). Ensure NEXT_PUBLIC_SUPABASE_* are set in the hosting environment
 - Images are marked unoptimized in next.config.js and allow domain 'rstzutpjqpuupjdaehsj.supabase.co'
 
 Repository notes
-- README.md appears out of date (mentions Vite/react-router and npm run preview). Use the Next.js commands above instead (dev/build/start) and remove Vite/preview references to avoid confusion
+- README.md has been updated to reflect Next.js App Router (removed Vite/react-router/preview references)
 - Product/design specifications live under .kiro/specs (multilingual support, Vercel deployment, monetization redesign) for additional context
 
