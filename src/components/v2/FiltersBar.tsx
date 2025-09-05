@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import {useTranslations} from 'next-intl';
 import type {PriceTier} from '@/data/resources.schema';
 
 export type Filters = {
@@ -15,10 +14,9 @@ type Props = {
   onChange: (next: Filters) => void;
 };
 
-const CATEGORIES = ['agents','tools','frameworks','starters','prompts','tutorials','libraries','showcases'] as const;
+const CATEGORIES = ['Agents','AI Tools','Frameworks','Starters','Prompts','Tutorials','Libraries','Showcases'] as const;
 
 export default function FiltersBar({filters, onChange}: Props) {
-  const t = useTranslations('pages.homeV2.filters');
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   const setPrice = (tier?: PriceTier) => onChange({...filters, priceTier: filters.priceTier === tier ? undefined : tier});
@@ -32,7 +30,7 @@ export default function FiltersBar({filters, onChange}: Props) {
           onClick={() => setMenuOpen((v) => !v)}
           className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
         >
-          {filters.category ? `${t('category')}: ${filters.category}` : t('category')}
+          {filters.category ? `Category: ${filters.category}` : 'Category'}
         </button>
         {menuOpen && (
           <div className="absolute left-0 top-11 z-10 w-[220px] rounded-2xl border border-white/10 bg-[rgba(20,20,25,0.9)] backdrop-blur-xl p-2 shadow-glass">
@@ -58,19 +56,19 @@ export default function FiltersBar({filters, onChange}: Props) {
             onClick={() => setPrice('free')}
             className={`rounded-full px-3 py-1.5 text-xs border ${filters.priceTier === 'free' ? 'border-cyan-400 bg-cyan-500/20 text-cyan-200' : 'border-white/10 bg-white/5 text-white/80 hover:bg-white/10'}`}
           >
-            {t('pricingFree')}
+            Free
           </button>
           <button
             onClick={() => setPrice('freemium')}
             className={`rounded-full px-3 py-1.5 text-xs border ${filters.priceTier === 'freemium' ? 'border-cyan-400 bg-cyan-500/20 text-cyan-200' : 'border-white/10 bg-white/5 text-white/80 hover:bg-white/10'}`}
           >
-            {t('pricingFreemium')}
+            Freemium
           </button>
           <button
             onClick={() => setPrice('paid')}
             className={`rounded-full px-3 py-1.5 text-xs border ${filters.priceTier === 'paid' ? 'border-cyan-400 bg-cyan-500/20 text-cyan-200' : 'border-white/10 bg-white/5 text-white/80 hover:bg-white/10'}`}
           >
-            {t('pricingPaid')}
+            Paid
           </button>
         </div>
       </div>
@@ -78,8 +76,8 @@ export default function FiltersBar({filters, onChange}: Props) {
         <input
           value={filters.q || ''}
           onChange={(e) => setQuery(e.target.value)}
-          aria-label={t('searchPlaceholder')}
-          placeholder={t('searchPlaceholder')}
+          aria-label="Search tools, agents, frameworks…"
+          placeholder="Search tools, agents, frameworks…"
           className="w-full md:w-80 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/90 placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-500/40"
         />
         <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/40">⌘K</div>

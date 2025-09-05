@@ -3,12 +3,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import {useTranslations} from 'next-intl';
 import type {Resource} from '@/data/resources.schema';
 
 export default function FeedCard({item}: {item: Resource}) {
-  const t = useTranslations('pages.homeV2.feed');
-  const badge = (item.score ?? 0) > 75 ? t('trending') : (item.releasedAt ? t('new') : null);
+  const badge = (item.score ?? 0) > 75 ? 'Trending' : (item.releasedAt ? 'New' : null);
 
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] hover:bg-white/[0.06] transition-all shadow-glass hover:shadow-glow">
@@ -34,10 +32,10 @@ export default function FeedCard({item}: {item: Resource}) {
             ))}
           </div>
           <div className="flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
-            <button className="text-xs text-white/80 hover:text-white">{t('save')}</button>
-            <button className="text-xs text-white/80 hover:text-white">{t('share')}</button>
+            <button className="text-xs text-white/80 hover:text-white">Save</button>
+            <button className="text-xs text-white/80 hover:text-white">Share</button>
             <Link href={item.url} target="_blank" className="text-xs text-cyan-300 hover:text-cyan-200">
-              {t('open')}
+              Open
             </Link>
           </div>
         </div>

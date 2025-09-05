@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import {useTranslations} from 'next-intl';
 import type {Resource} from '@/data/resources.schema';
 import {applyFilters, paginate} from '@/data/resources.utils';
 import FeedGrid from './FeedGrid';
@@ -10,7 +9,6 @@ import type {Filters} from './FiltersBar';
 type Props = { resources: Resource[]; filters?: Filters };
 
 export default function ContentTabs({resources, filters}: Props) {
-  const t = useTranslations('pages.homeV2.tabs');
   const [tab, setTab] = React.useState<'latest' | 'forYou' | 'trending'>('latest');
   const [page, setPage] = React.useState(1);
 
@@ -33,6 +31,12 @@ export default function ContentTabs({resources, filters}: Props) {
 
   const {items, total, page: p} = paginate(sorted, page, 12);
 
+  const tabLabels = {
+    latest: 'Latest',
+    forYou: 'For You',
+    trending: 'Trending'
+  };
+
   return (
     <section className="mt-8" id="feed">
       <div className="inline-flex rounded-full bg-white/5 p-1 border border-white/10">
@@ -45,7 +49,7 @@ export default function ContentTabs({resources, filters}: Props) {
               tab === key ? 'bg-cyan-500/90 text-slate-900' : 'text-white/80 hover:bg-white/10'
             ].join(' ')}
           >
-            {t(key)}
+            {tabLabels[key]}
           </button>
         ))}
       </div>
