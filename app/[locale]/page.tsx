@@ -1,12 +1,6 @@
-import Layout from '@/components/Layout'
-import HomeV2 from '@/components/v2/HomeV2'
-import {loadResources} from '@/data/resources.server'
+import {notFound} from 'next/navigation'
 
-export default async function HomePage() {
-  const resources = await loadResources();
-  return (
-    <Layout>
-      <HomeV2 resources={resources} />
-    </Layout>
-  )
+export default function Page() {
+  // Localized routes are deprecated; always 404
+  notFound()
 }

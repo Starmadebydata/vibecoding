@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import {useTranslations} from 'next-intl';
 
+import Link from 'next/link'
+
 export default function FooterV2() {
   const t = useTranslations('pages.homeV2.footer');
   return (

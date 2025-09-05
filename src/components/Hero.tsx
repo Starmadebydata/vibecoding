@@ -3,15 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSafeTheme } from '@/hooks/useSafeTheme';
-import { useLocalization } from '@/hooks/useLocalization';
 import { Bot, Book, Code, Users, Sparkles, BookOpen, Compass, Library } from 'lucide-react';
 import QuickNavigation from './QuickNavigation';
 
 const Hero: React.FC = () => {
   const { theme } = useSafeTheme();
-  const { t } = useLocalization('pages.home.hero');
   const [typedText, setTypedText] = useState('');
-  const fullText = t('typedText');
+  const fullText = 'Build faster with AI-powered coding tools';
   
   useEffect(() => {
     let index = 0;
@@ -27,31 +25,30 @@ const Hero: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const { t: tCategories } = useLocalization('pages.home.categories');
   
   const categories = [
     {
       icon: <BookOpen className="w-6 h-6" />,
-      title: tCategories('guides.title'),
-      description: tCategories('guides.description'),
+      title: 'Programming Guides',
+      description: 'Step-by-step guides for modern development',
       link: '/guides'
     },
     {
       icon: <Code className="w-6 h-6" />,
-      title: tCategories('tools.title'),
-      description: tCategories('tools.description'),
+      title: 'Development Tools',
+      description: 'Essential tools for productive coding',
       link: '/tools'
     },
     {
       icon: <Book className="w-6 h-6" />,
-      title: tCategories('bestPractices.title'),
-      description: tCategories('bestPractices.description'),
+      title: 'Best Practices',
+      description: 'Industry standards and proven methods',
       link: '/best-practices'
     },
     {
       icon: <Compass className="w-6 h-6" />,
-      title: tCategories('tutorials.title'),
-      description: tCategories('tutorials.description'),
+      title: 'Tutorials',
+      description: 'Learn through hands-on examples',
       link: '/tutorials'
     }
   ];
@@ -61,9 +58,9 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-            <span className="block">{t('headline')}</span>
+            <span className="block">Welcome to</span>
             <span className="block mt-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              {t('subheadline')}
+              Vibe Coding
             </span>
           </h1>
           
@@ -75,7 +72,7 @@ const Hero: React.FC = () => {
           </div>
           
           <p className={`mt-6 text-lg max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-            {t('description')}
+            Discover AI-powered coding tools, best practices, and resources to accelerate your development workflow.
           </p>
         </div>
         
