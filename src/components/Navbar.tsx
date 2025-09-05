@@ -92,25 +92,22 @@ const Navbar: React.FC = () => {
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/20 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {t('features')}
+              Features
             </a>
             <a 
-              href="#editor" 
+              href="#feed" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/20 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {t('examples')}
+              Examples
             </a>
             <a 
               href="#community" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/20 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {t('community')}
+              Community
             </a>
-            <div className="px-3 py-2">
-              <LanguageSwitcher className="w-full" />
-            </div>
             <button 
               onClick={toggleTheme}
               className="flex items-center w-full px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/20 transition-colors duration-200"
