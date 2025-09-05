@@ -1,22 +1,12 @@
 import Layout from '@/components/Layout'
-import Hero from '@/components/Hero'
-import Features from '@/components/Features'
-import ToolsShowcase from '@/components/CodeEditor'
-import ProjectsShowcase from '@/components/ProjectsShowcase'
-import Blog from '@/components/Blog'
-import Community from '@/components/Community'
-import Footer from '@/components/Footer'
+import HomeV2 from '@/components/v2/HomeV2'
+import {loadResources} from '@/data/resources.loader'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const resources = await loadResources();
   return (
     <Layout>
-      <Hero />
-      <Features />
-      <ToolsShowcase />
-      <ProjectsShowcase />
-      <Blog />
-      <Community />
-      <Footer />
+      <HomeV2 resources={resources} />
     </Layout>
   )
 }

@@ -3,10 +3,10 @@ import createMiddleware from 'next-intl/middleware';
 // 这个中间件将处理语言检测和路由
 export default createMiddleware({
   // 支持的语言列表
-  locales: ['zh', 'en'],
+  locales: ['en', 'zh'],
   
-  // 默认语言
-  defaultLocale: 'zh',
+  // 默认语言（切换为英文）
+  defaultLocale: 'en',
   
   // 自动从浏览器设置中检测用户的语言
   localeDetection: true

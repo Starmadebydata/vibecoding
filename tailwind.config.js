@@ -35,6 +35,13 @@ module.exports = {
           900: '#1e3a8a',
           950: '#172554',
         },
+        brand: {
+          cyan: '#22d3ee'
+        }
+      },
+      boxShadow: {
+        glass: 'inset 0 1px 0 0 rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.45)',
+        glow: '0 0 0 1px rgba(56,189,248,0.25), 0 8px 40px rgba(56,189,248,0.12)'
       },
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',

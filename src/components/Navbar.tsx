@@ -27,8 +27,8 @@ const Navbar: React.FC = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? `${theme === 'dark' ? 'bg-gray-900/90 backdrop-blur-md' : 'bg-white/90 backdrop-blur-md shadow-sm'}` 
-          : 'bg-transparent'
+          ? `${theme === 'dark' ? 'bg-[rgba(12,14,20,0.6)] backdrop-blur border-b border-white/10' : 'bg-white/80 backdrop-blur-md shadow-sm'}` 
+          : `${theme === 'dark' ? 'bg-transparent' : 'bg-transparent'}`
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,6 +55,12 @@ const Navbar: React.FC = () => {
             </a>
             <Search />
             <LanguageSwitcher />
+            <a
+              href="mailto:hello@vibecoding.ai?subject=Submit%20Project"
+              className="hidden lg:inline-flex items-center rounded-full bg-cyan-500/90 text-slate-950 px-4 py-2 text-sm font-medium hover:bg-cyan-400 transition-colors"
+            >
+              提交项目
+            </a>
             <button 
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-800/20 transition-colors duration-200"

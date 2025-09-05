@@ -31,6 +31,66 @@
     }
   },
   "pages": {
+    "homeV2": {
+      "hero": {
+        "eyebrow": "占位",
+        "title": "Vibe Coding：AI 驱动的开发门户（占位）",
+        "subtitle": "Discover coding agents, AI tools, and modern workflows.（待翻译）",
+        "primaryCta": "Explore the latest（占位）",
+        "secondaryCta": "How it works（占位）"
+      },
+      "filters": {
+        "searchPlaceholder": "搜索工具、Agent、框架…（占位）",
+        "category": "分类（占位）",
+        "pricing": "价格（占位）",
+        "pricingFree": "免费（占位）",
+        "pricingPaid": "付费（占位）",
+        "pricingFreemium": "增值（占位）"
+      },
+      "tabs": {
+        "latest": "最新（占位）",
+        "forYou": "为你推荐（占位）",
+        "trending": "流行（占位）"
+      },
+      "feed": {
+        "new": "新（占位）",
+        "trending": "趋势（占位）",
+        "open": "打开（占位）",
+        "save": "收藏（占位）",
+        "share": "分享（占位）"
+      },
+      "categories": {
+        "title": "探索分类（占位）",
+        "agents": "Agent（占位）",
+        "tools": "AI 工具（占位）",
+        "frameworks": "框架（占位）",
+        "starters": "模板（占位）",
+        "prompts": "提示词（占位）",
+        "tutorials": "教程（占位）",
+        "libraries": "库（占位）",
+        "showcases": "展示（占位）"
+      },
+      "newsletter": {
+        "title": "订阅更新（占位）",
+        "subtitle": "获取新工具和 Agent 更新（占位）",
+        "placeholder": "you@domain.com（占位）",
+        "cta": "订阅（占位）"
+      },
+      "footer": {
+        "tagline": "Vibe Coding — 用 AI 构建，更快发布。（占位）",
+        "links": {
+          "about": "关于（占位）",
+          "changelog": "更新日志（占位）",
+          "privacy": "隐私（占位）",
+          "terms": "条款（占位）",
+          "contact": "联系（占位）"
+        },
+        "copyright": "版权所有（占位）"
+      },
+      "navbar": {
+        "submitProject": "提交项目（占位）"
+      }
+    },
     "home": {
       "title": "Vibe Coding - 提升你的编程体验",
       "description": "探索 AI 驱动的编程方法，发现效率提升的最佳实践",

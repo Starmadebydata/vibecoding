@@ -31,6 +31,66 @@
     }
   },
   "pages": {
+    "homeV2": {
+      "hero": {
+        "eyebrow": "Build faster with coding agents",
+        "title": "Vibe Coding: your AI-powered dev portal",
+        "subtitle": "Discover coding agents, AI tools, and modern workflows to ship faster. Curated and refreshed daily.",
+        "primaryCta": "Explore the latest",
+        "secondaryCta": "How it works"
+      },
+      "filters": {
+        "searchPlaceholder": "Search tools, agents, frameworks…",
+        "category": "Category",
+        "pricing": "Pricing",
+        "pricingFree": "Free",
+        "pricingPaid": "Paid",
+        "pricingFreemium": "Freemium"
+      },
+      "tabs": {
+        "latest": "Latest",
+        "forYou": "For You",
+        "trending": "Trending"
+      },
+      "feed": {
+        "new": "New",
+        "trending": "Trending",
+        "open": "Open",
+        "save": "Save",
+        "share": "Share"
+      },
+      "categories": {
+        "title": "Explore categories",
+        "agents": "Agents",
+        "tools": "AI Tools",
+        "frameworks": "Frameworks",
+        "starters": "Starters",
+        "prompts": "Prompts",
+        "tutorials": "Tutorials",
+        "libraries": "Libraries",
+        "showcases": "Showcases"
+      },
+      "newsletter": {
+        "title": "Stay in the loop",
+        "subtitle": "Get occasional updates on new coding agents and tools.",
+        "placeholder": "you@domain.com",
+        "cta": "Subscribe"
+      },
+      "footer": {
+        "tagline": "Vibe Coding — Build with AI, ship with speed.",
+        "links": {
+          "about": "About",
+          "changelog": "Changelog",
+          "privacy": "Privacy",
+          "terms": "Terms",
+          "contact": "Contact"
+        },
+        "copyright": "All rights reserved."
+      },
+      "navbar": {
+        "submitProject": "Submit Project"
+      }
+    },
     "home": {
       "title": "Vibe Coding - Enhance Your Programming Experience",
       "description": "Explore AI-driven programming methods and discover best practices for efficiency improvement",
