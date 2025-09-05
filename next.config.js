@@ -1,8 +1,3 @@
-const createNextIntlPlugin = require('next-intl/plugin');
-
-// 使用正确的路径指向 i18n 请求配置文件
-const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
@@ -16,4 +11,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withNextIntl(nextConfig)
+module.exports = nextConfig

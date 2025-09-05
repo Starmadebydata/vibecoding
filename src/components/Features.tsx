@@ -2,61 +2,59 @@
 
 import React from 'react';
 import { useSafeTheme } from '@/hooks/useSafeTheme';
-import { useLocalization } from '@/hooks/useLocalization';
 import { Bot, Book, Code, MessageSquare, Share2, Zap, Brain, LayoutGrid, Terminal, Puzzle, FileCode, Users, Settings, Workflow } from 'lucide-react';
 
 const Features: React.FC = () => {
   const { theme } = useSafeTheme();
-  const { t } = useLocalization('pages.home.features');
   
   const categories = [
     {
       icon: <Bot className="w-6 h-6 text-purple-500" />,
-      title: t('categories.aiBasics.title'),
-      description: t('categories.aiBasics.description'),
-      subcategories: t.raw('categories.aiBasics.subcategories') as string[]
+      title: 'AI Basics',
+      description: 'Fundamental concepts of AI-powered development',
+      subcategories: ['ChatGPT Integration', 'Code Completion', 'Smart Suggestions']
     },
     {
       icon: <Terminal className="w-6 h-6 text-blue-500" />,
-      title: t('categories.devTools.title'),
-      description: t('categories.devTools.description'),
-      subcategories: t.raw('categories.devTools.subcategories') as string[]
+      title: 'Development Tools',
+      description: 'Essential tools for modern development',
+      subcategories: ['IDE Extensions', 'CLI Tools', 'Debugging Aids']
     },
     {
       icon: <Brain className="w-6 h-6 text-green-500" />,
-      title: t('categories.promptEngineering.title'),
-      description: t('categories.promptEngineering.description'),
-      subcategories: t.raw('categories.promptEngineering.subcategories') as string[]
+      title: 'Prompt Engineering',
+      description: 'Master the art of effective AI communication',
+      subcategories: ['Prompt Templates', 'Best Practices', 'Advanced Techniques']
     },
     {
       icon: <Code className="w-6 h-6 text-yellow-500" />,
-      title: t('categories.codeGeneration.title'),
-      description: t('categories.codeGeneration.description'),
-      subcategories: t.raw('categories.codeGeneration.subcategories') as string[]
+      title: 'Code Generation',
+      description: 'Automated code creation and optimization',
+      subcategories: ['Template Generation', 'Code Refactoring', 'Documentation']
     },
     {
       icon: <Puzzle className="w-6 h-6 text-red-500" />,
-      title: t('categories.integration.title'),
-      description: t('categories.integration.description'),
-      subcategories: t.raw('categories.integration.subcategories') as string[]
+      title: 'Integration',
+      description: 'Seamless workflow integration',
+      subcategories: ['API Integration', 'Webhook Setup', 'Third-party Tools']
     },
     {
       icon: <FileCode className="w-6 h-6 text-indigo-500" />,
-      title: t('categories.projectTemplates.title'),
-      description: t('categories.projectTemplates.description'),
-      subcategories: t.raw('categories.projectTemplates.subcategories') as string[]
+      title: 'Project Templates',
+      description: 'Ready-to-use project structures',
+      subcategories: ['Starter Kits', 'Boilerplates', 'Example Projects']
     },
     {
       icon: <Settings className="w-6 h-6 text-amber-500" />,
-      title: t('categories.toolConfig.title'),
-      description: t('categories.toolConfig.description'),
-      subcategories: t.raw('categories.toolConfig.subcategories') as string[]
+      title: 'Tool Configuration',
+      description: 'Optimized development setups',
+      subcategories: ['Environment Setup', 'Config Templates', 'Performance Tips']
     },
     {
       icon: <Workflow className="w-6 h-6 text-teal-500" />,
-      title: t('categories.workflow.title'),
-      description: t('categories.workflow.description'),
-      subcategories: t.raw('categories.workflow.subcategories') as string[]
+      title: 'Workflow Optimization',
+      description: 'Streamlined development processes',
+      subcategories: ['Automation Scripts', 'CI/CD Pipelines', 'Team Collaboration']
     }
   ];
   
@@ -66,11 +64,11 @@ const Features: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold">
             <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              {t('title')}
+              Explore Our Features
             </span>
           </h2>
           <p className={`mt-4 max-w-2xl mx-auto text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-            {t('subtitle')}
+            Discover tools and resources to accelerate your AI-powered development journey
           </p>
         </div>
         
