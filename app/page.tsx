@@ -1,6 +1,12 @@
-import {redirect} from 'next/navigation';
+import Layout from '@/components/Layout'
+import HomeV2 from '@/components/v2/HomeV2'
+import {loadResources} from '@/data/resources.server'
 
-export default function RootPage() {
-  // 默认重定向到英文页面（中间件仍会做语言检测）
-  redirect('/en');
+export default async function Page() {
+  const resources = await loadResources();
+  return (
+    <Layout>
+      <HomeV2 resources={resources} />
+    </Layout>
+  )
 }
