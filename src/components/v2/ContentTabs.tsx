@@ -3,7 +3,7 @@
 import React from 'react';
 import {useTranslations} from 'next-intl';
 import type {Resource} from '@/data/resources.schema';
-import {applyFilters, paginate} from '@/data/resources.loader';
+import {applyFilters, paginate} from '@/data/resources.utils';
 import FeedGrid from './FeedGrid';
 import type {Filters} from './FiltersBar';
 
